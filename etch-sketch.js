@@ -5,16 +5,25 @@ const gridContainer = document.querySelector("#gridContainer");
 const rainbowMode = document.querySelector("#rainbowMode");
 const eraserMode = document.querySelector("#eraser");
 let rainbowModeActive = 0;
+
+window.mouseDown = false;
+document.onmousedown = function() {
+    window.mouseDown = true;
+}
+document.onmouseup = function() {
+    window.mouseDown = false;
+}
+
 drawGrid(i);
 function drawGrid(heightWidth) {
     for (let i = 0; i < dimensions; i++) {
         const gridBox = document.createElement("div");
         gridBox.classList.add("gridBox");
         gridBox.addEventListener("mouseover", () => {
-            if(rainbowModeActive === 0) {
+            if(rainbowModeActive === 0 && window.mouseDown == true) {
                 gridBox.style.background = "black";
             }
-            else if(rainbowModeActive === 1) {
+            else if(rainbowModeActive === 1 && window.mouseDown == true) {
                 gridBox.style.background = "rgb(" + Math.floor(Math.random() * 255) + ", " + Math.floor(Math.random() * 255) + ", " + Math.floor(Math.random() * 255) + ")";
             }
 
