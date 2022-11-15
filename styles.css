@@ -72,6 +72,10 @@ button {
     justify-content: center;
 }
 
+h1 {
+    font-family: "Roboto", sans-serif;
+}
+
 @keyframes gradientBG {
 	0% {
 		background-position: 0% 50%;

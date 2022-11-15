@@ -51,4 +51,8 @@ rainbowMode.addEventListener("click", () => {
 
 eraserMode.addEventListener("click", () => {
     rainbowModeActive = 0;
+    rainbowMode.style.background = "";
+    rainbowMode.style.animation = "";
+    gridContainer.innerHTML = "";
+    drawGrid(i);
 })
