@@ -13,7 +13,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 120px;
+    margin-top: 40px;
 }
 
 #gridContainer {
@@ -23,7 +23,7 @@ body {
     height: 650px;
     width: 650px;
     background-color: white;
-    margin-right: 160px;
+    margin-right: 220px;
 }
 
 #controls {
@@ -65,6 +65,11 @@ button {
 #rainbowMode {
     transition: .3s;
     animation: gradientBG 4.5s ease infinite;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
 }
 
 @keyframes gradientBG {

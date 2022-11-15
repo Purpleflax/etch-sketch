@@ -3,6 +3,7 @@ let dimensions = i * i;
 const sizeSelector = document.querySelector("#sizeSelector");
 const gridContainer = document.querySelector("#gridContainer");
 const rainbowMode = document.querySelector("#rainbowMode");
+const eraserMode = document.querySelector("#eraser");
 let rainbowModeActive = 0;
 drawGrid(i);
 function drawGrid(heightWidth) {
@@ -15,7 +16,8 @@ function drawGrid(heightWidth) {
             }
             else if(rainbowModeActive === 1) {
                 gridBox.style.background = "rgb(" + Math.floor(Math.random() * 255) + ", " + Math.floor(Math.random() * 255) + ", " + Math.floor(Math.random() * 255) + ")";
-             }
+            }
+
         });
         gridContainer.appendChild(gridBox);
     }
@@ -46,3 +48,7 @@ rainbowMode.addEventListener("click", () => {
         rainbowMode.style.animation = "";
     }
 });
+
+eraserMode.addEventListener("click", () => {
+    rainbowModeActive = 0;
+})
